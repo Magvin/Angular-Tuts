@@ -12,6 +12,7 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = 'No Server been created'
   serverName = '';
   serverCreated = false;
+  servers = ['Test server', 'New Server']
 
   constructor() {
     setTimeout(() => {
@@ -24,6 +25,7 @@ export class ServersComponent implements OnInit {
 
 
   onCreateServer = () => {
+    this.servers.push(this.serverName)
     this.serverCreated = true;
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName
 
@@ -37,7 +39,5 @@ export class ServersComponent implements OnInit {
     this.serverName = (<HTMLInputElement>event.target).value;
 
   }
-  getColor = () => {
 
-  }
 }

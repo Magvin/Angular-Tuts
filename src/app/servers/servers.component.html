@@ -6,5 +6,4 @@
 </button>
 <!-- <p>{{serverCreationStatus}}</p> -->
 <p *ngIf="serverCreated">Server was created, server name {{serverName}}</p>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>

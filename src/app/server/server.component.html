@@ -1,3 +1,4 @@
 <div>
-    <p>{{'Server'}} with ID {{ serverId}} is <span [ngStyle]="{'color': getColor()}">{{ getServerStatus()}}</span></p>
+    <p [ngClass]="{online: serverStatus ==='online'}">{{'Server'}} with ID {{ serverId }} is <span [ngStyle]="{'color': getColor()}">{{
+            getServerStatus()}}</span></p>
 </div>
