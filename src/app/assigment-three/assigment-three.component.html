@@ -1,0 +1,3 @@
+<button class="btn btn-primary" [ngStyle]="{'marginTop': '25px'}" (click)='increaseId()'>Display Details</button>
+<p *ngIf="toggle">{{paragraph}}</p>
+<p *ngFor="let num of id" [ngStyle]="{'backgroundColor': num >=5 ? 'blue' :'white'}" [ngClass]="{'white': num>=5}">{{num}}</p>
