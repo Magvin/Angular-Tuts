@@ -10,8 +10,15 @@ export class AppComponent {
     // Another aproach to get values before submitting with @ViewChild
   @ViewChild('f') singupForm: NgForm;
   defaultQuestion = 'pet';
-  answer = '';
   genders = ['male', 'female'];
+  submited = false;
+
+    // User Input values
+    userName = '';
+    userEmail = '';
+    secretQuestion = '';
+    answer = '';
+    gender = '';
   suggestUserName() {
     const suggestedName = 'Superuser';
     // One of approches to set a def values in fields
@@ -42,6 +49,15 @@ export class AppComponent {
 
 
   onSubmit() {
+   const valueOfFields = this.singupForm.value;
     console.log(this.singupForm);
+    console.log(valueOfFields.userData.email);
+    this.submited = true;
+    this.userName = valueOfFields.userData.username;
+    this.userEmail = valueOfFields.userData.email;
+    this.secretQuestion = valueOfFields.secret;
+    this.answer = valueOfFields.questionAnswer;
+    this.gender = valueOfFields.gender;
+
   }
 }

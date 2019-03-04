@@ -75,6 +75,17 @@
         Submit
      </button>
       </form>
+      <hr>
     </div>
+  </div>
+  <div class="row col text-center"
+  *ngIf="submited"
+  >
+    <h3>Your data</h3>
+    <p>Username:{{userName}}</p>
+    <p>Email:{{userEmail}}</p>
+    <p>Secret Question:{{secretQuestion}}</p>
+    <p>Answer:{{answer}}</p>
+    <p>Gender:{{gender}}</p>
   </div>
 </div>
