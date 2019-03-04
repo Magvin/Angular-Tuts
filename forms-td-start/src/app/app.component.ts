@@ -14,16 +14,21 @@ export class AppComponent {
   genders = ['male', 'female'];
   suggestUserName() {
     const suggestedName = 'Superuser';
-    this.singupForm.setValue({
+    // One of approches to set a def values in fields
+    // this.singupForm.setValue({
+    //   userData: {
+    //       username: suggestedName,
+    //       email: ''
+    //   },
+    //   secret: this.defaultQuestion,
+    //   questionAnswer: '',
+    //   gender: 'male'
+    // });
+
+    this.singupForm.form.patchValue({
       userData: {
-          username: suggestedName,
-          email: ''
-      },
-      secret: this.defaultQuestion,
-      questionAnswer: '',
-      gender: 'male'
-
-
+        username: suggestedName
+      }
     });
   }
 
