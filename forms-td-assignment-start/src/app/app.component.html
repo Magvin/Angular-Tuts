@@ -14,7 +14,7 @@
            Optionally, display it in your template.
       -->
 
-      <form #f="ngForm">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="userInfo">
           <div class="form-group">
           <label for="email">Email
@@ -64,13 +64,11 @@
                <option value="basic">Basic</option>
                <option value="advanced">Advanced</option>
                <option value="pro">Pro</option>
-
-                
               </select>
             </label>
           </div>
         </div >
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
   </div>
