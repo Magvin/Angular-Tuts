@@ -19,6 +19,9 @@ export class AppComponent {
     secretQuestion = '';
     answer = '';
     gender = '';
+
+    // Or we can store this values in object
+
   suggestUserName() {
     const suggestedName = 'Superuser';
     // One of approches to set a def values in fields
@@ -58,6 +61,14 @@ export class AppComponent {
     this.secretQuestion = valueOfFields.secret;
     this.answer = valueOfFields.questionAnswer;
     this.gender = valueOfFields.gender;
+
+    // Reset Values after submitting form
+      this.singupForm.reset();
+
+  }
+
+  onReset() {
+    this.singupForm.reset();
 
   }
 }
