@@ -13,6 +13,65 @@
            Upon submitting the form, you should simply print the Value of the Form to the Console.
            Optionally, display it in your template.
       -->
+
+      <form #f="ngForm">
+        <div class="userInfo">
+          <div class="form-group">
+          <label for="email">Email
+            <input type="email"
+            name="email"
+            class="form-control"
+            id="email"
+            ngModel
+            required
+            #email="ngModel">
+          </label>
+          <p class="help-block" *ngIf="!email.valid && email.touched">Please enter email in this field!</p>
+        </div>
+        <div class="form-group">
+          <label for="password">
+            Password
+            <input type="password"
+            name="password"
+            class="form-control"
+            id="passwordOne"
+            required
+            ngModel
+            #passwordOne="ngModel">
+          </label>
+        </div>
+        <div class="form-group">
+            <label for="passwordTwo">
+              Password
+              <input type="password"
+              name="passwordTwo"
+              class="form-control"
+              id="passwordTwo"
+              required
+              ngModel
+              #passwordTwo="ngModel">
+            </label>
+          </div>
+          <p *ngIf="passwordOne.value != passwordTwo.value">Password should match!</p>
+          <div class="form-group">
+            <label for="subscription">
+              Subscriptions:
+              <select name="subscription"
+               id="subscription"
+               class="form-control"
+               [ngModel]="defaultSubscription"
+               >
+               <option value="basic">Basic</option>
+               <option value="advanced">Advanced</option>
+               <option value="pro">Pro</option>
+
+                
+              </select>
+            </label>
+          </div>
+        </div >
+        <button class="btn btn-primary">Submit</button>
+      </form>
     </div>
   </div>
 </div>
