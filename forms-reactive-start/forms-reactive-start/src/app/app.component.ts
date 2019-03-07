@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   genders = ['male', 'female'];
-  restrictedUsernames =['Chris', 'Ana'];
+  restrictedUsernames = ['Chris', 'Ana'];
 
   // Form
   singUpForm: FormGroup;
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
   }
 
   restrictedNames(control: FormControl): {[s: string]: boolean} {
-    if(this.restrictedUsernames.indexOf(control.value)) {
+    if (this.restrictedUsernames.indexOf(control.value)) {
       return {'nameIsRectricted': true};
     }
     return null;
