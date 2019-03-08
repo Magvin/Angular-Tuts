@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   genders = ['male', 'female'];
   restrictedUsernames = ['Chris', 'Ana'];
 
+
   // Form
   singUpForm: FormGroup;
 
@@ -26,12 +27,15 @@ export class AppComponent implements OnInit {
     console.log(this.singUpForm);
   }
 
+  get hobby() {
+    return this.singUpForm.get('hobby') as FormArray;
+  }
   onAddHobby() {
     const control = new FormControl(null, Validators.required);
-   (<FormArray> this.singUpForm.get('hobby')).push(control);
+    this.hobby.push(control);
   }
 
-  restrictedNames(control: FormControl): {[s: string]: boolean} {
+  restrictedNames(control: FormControl): {[s: string]: boolean}  {
     if (this.restrictedUsernames.indexOf(control.value) !== -1) {
       return {'nameIsRectricted': true};
     }
