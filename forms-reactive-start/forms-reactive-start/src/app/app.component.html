@@ -25,7 +25,14 @@
             formControlName="email">
             <span class="help-block"
             *ngIf="!singUpForm.get('email').valid && singUpForm.get('email').touched"
-            >Please enter a valid email!</span>
+            >
+            <span class="help-block"
+            *ngIf="singUpForm.get('email').hasError('emailIsRectricted')"
+            > This email is already taken</span>
+            <span class="help-block"
+            *ngIf="singUpForm.get('email').hasError('required')"
+            > Please recheck your input</span>
+          </span>
         </div>
         <div class="radio" *ngFor="let gender of genders">
           <label>
