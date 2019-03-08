@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
   }
 
   restrictedNames(control: FormControl): {[s: string]: boolean} {
-    if (this.restrictedUsernames.indexOf(control.value)) {
+    if (this.restrictedUsernames.indexOf(control.value) !== -1) {
       return {'nameIsRectricted': true};
     }
     return null;

@@ -10,7 +10,11 @@
             class="form-control"
             formControlName="username"
             >
-            <span class="help-block" *ngIf="!singUpForm.get('username').valid && singUpForm.get('username').touched">Please enter your username!</span>
+
+            <span class="help-block" *ngIf="!singUpForm.get('username').valid && singUpForm.get('username').touched">
+                <span class="help-block" *ngIf="singUpForm.get('username').errors['nameIsRectricted']">This username is already registered!</span>
+                <span class="help-block" *ngIf="singUpForm.get('username').errors['required']">This field is required </span>
+            </span>
         </div>
         <div class="form-group">
           <label for="email">email</label>
@@ -44,7 +48,7 @@
           </div>
         </div>
 
-        <button class="btn btn-primary" type="submit" [disabled]="!singUpForm.valid">Submit</button>
+        <button class="btn btn-primary" type="submit" >Submit</button>
       </form>
     </div>
   </div>
