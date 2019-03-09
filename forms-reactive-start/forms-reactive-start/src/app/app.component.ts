@@ -26,6 +26,9 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     console.log(this.singUpForm);
+    this.singUpForm.get('username').reset();
+    this.singUpForm.get('email').reset();
+    this.singUpForm.get('hobby  ').reset();
   }
 
   get hobby() {
