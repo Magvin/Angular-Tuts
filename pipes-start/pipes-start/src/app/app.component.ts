@@ -6,6 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+
+  appStatus = new Promise(
+  (resolve,reject) => {
+    setTimeout(() => {
+      resolve('stable');
+    },2000);
+  });
+
  private servers = [
     {
       instanceType: 'medium',
@@ -49,7 +57,7 @@ export class AppComponent implements OnInit{
   
 
   //typeahead 
-  
+
   filterStatus(event){
      const newServer =[]
     if(this.filteredStatus.length === 0  ) {
