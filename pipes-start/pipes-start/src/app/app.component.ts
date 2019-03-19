@@ -67,13 +67,11 @@ export class AppComponent implements OnInit{
         (item) => {
           if(item.status.match(event)) {
             newServer.push(item)
-            console.log(item)
           }
           
         return this.servers = newServer;
         }
       )
     } 
-    console.log(this.oldServer)
   }
 }
