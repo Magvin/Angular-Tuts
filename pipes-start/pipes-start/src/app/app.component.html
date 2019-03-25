@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <label for="search">Search by server status:
+      <input type="text" id='search' [(ngModel)]="filteredStatus" (ngModelChange)="filterStatus($event)">
+    </label>
+    <hr>
+    <h2>{{appStatus | async}}</h2>
+    <hr>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let server of servers | sort:'name'"
+          [ngClass]="getStatusClasses(server)">
+          <span
+            class="badge">
+            {{ server.status }}
+          </span>
+          <strong>{{ server.name | shorten: 15 }}</strong> | 
+          {{ server.instanceType | uppercase }} |
+           {{ server.started  | date:'d/MM/yy z'}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
